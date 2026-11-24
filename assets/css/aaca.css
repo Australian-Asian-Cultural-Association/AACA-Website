@@ -285,3 +285,25 @@ div.aaca-todo, p.aaca-todo { display: block; padding: 10px 14px; margin: 0 0 1em
 .aaca-item__img svg { width: 64px; height: 64px; color: var(--aaca-blue); }
 section[hidden] { display: none !important; }
 .aaca-grid--2 .aaca-item__img { aspect-ratio: 21/9; }
+
+/* Language switch (English / 中文) */
+.aaca-brand { margin-right: auto; }
+.aaca-lang {
+  display: inline-block; padding: 7px 14px; border: 2px solid var(--aaca-blue); border-radius: 999px;
+  font-family: var(--aaca-font-head); font-weight: 600; font-size: .9rem; line-height: 1.2;
+  color: var(--aaca-blue); text-decoration: none; white-space: nowrap;
+}
+.aaca-lang:hover, .aaca-lang:focus-visible { background: var(--aaca-blue); color: #fff; }
+@media (max-width: 1120px) { .aaca-lang { order: 1; } .aaca-nav__toggle { order: 2; } }
+
+/* Chinese pages: use system Chinese fonts after the brand fonts */
+html[lang|="zh"] {
+  --aaca-font-head: "Poppins", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --aaca-font-body: "Open Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
+html[lang|="zh"] .aaca-facts strong, html[lang|="zh"] .aaca-badge { letter-spacing: 0; }
+
+/* Numbered steps (membership) */
+.aaca-steps { margin: 12px 0 8px; padding-left: 1.4em; }
+.aaca-steps li { margin-bottom: .6em; padding-left: .3em; }
+.aaca-steps li::marker { color: var(--aaca-blue); font-weight: 700; }
