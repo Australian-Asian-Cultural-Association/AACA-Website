@@ -285,3 +285,34 @@ div.aaca-todo, p.aaca-todo { display: block; padding: 10px 14px; margin: 0 0 1em
 .aaca-item__img svg { width: 64px; height: 64px; color: var(--aaca-blue); }
 section[hidden] { display: none !important; }
 .aaca-grid--2 .aaca-item__img { aspect-ratio: 21/9; }
+
+/* Language switch (English / 中文) */
+.aaca-brand { margin-right: auto; }
+.aaca-lang {
+  display: inline-block; padding: 7px 14px; border: 2px solid var(--aaca-blue); border-radius: 999px;
+  font-family: var(--aaca-font-head); font-weight: 600; font-size: .9rem; line-height: 1.2;
+  color: var(--aaca-blue); text-decoration: none; white-space: nowrap;
+}
+.aaca-lang:hover, .aaca-lang:focus-visible { background: var(--aaca-blue); color: #fff; }
+@media (max-width: 1120px) { .aaca-lang { order: 1; } .aaca-nav__toggle { order: 2; } }
+
+/* Chinese pages: use system Chinese fonts after the brand fonts */
+html[lang|="zh"] {
+  --aaca-font-head: "Poppins", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --aaca-font-body: "Open Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
+html[lang|="zh"] .aaca-facts strong, html[lang|="zh"] .aaca-badge { letter-spacing: 0; }
+
+/* Numbered steps (membership) */
+.aaca-steps { margin: 12px 0 8px; padding-left: 1.4em; }
+.aaca-steps li { margin-bottom: .6em; padding-left: .3em; }
+.aaca-steps li::marker { color: var(--aaca-blue); font-weight: 700; }
+
+/* Membership application: online form button + QR code */
+.aaca-apply { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 8px; }
+.aaca-apply .aaca-muted { margin: 10px 0 0; font-size: .9rem; }
+.aaca-qr { margin: 0; text-align: center; }
+.aaca-qr img { display: block; width: 200px; max-width: 100%; height: auto; border-radius: 14px; box-shadow: var(--aaca-shadow); }
+.aaca-qr figcaption { margin-top: 8px; font-size: .9rem; color: var(--aaca-blue-dark); font-weight: 600; }
+.aaca-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+@media (max-width: 720px) { .aaca-apply { flex-direction: column; align-items: flex-start; } .aaca-qr { align-self: center; } }
